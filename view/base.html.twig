@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Pokemon Battle!{% endblock %}</title>
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">IIM Blog</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Home</a></li>
+                    {% if session.connected %}
+                        <li><a href="my_pokemon.php">My Pokemon</a></li>
+                        <li><a href="battle.php">Battle</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if session.connected %}
+                        <li><a href="#">Welcome {{ session.username }}!</a></li>
+                        <li><a href="logout.php">Logout</a></li>
+                    {% else %}
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="register.php">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+    <footer id="footer" class="col-md-12 text-center">
+        {% block footer %}
+            <p>@author Quentin Decobert (<a href="https://github.com/QuentinDecobert" target="_blank">https://github.com/QuentinDecobert</a>)</p>
+            <p>This code is under MIT licence (see <a href="https://github.com/QuentinDecobert/license/blob/master/MIT.md">https://github.com/QuentinDecobert/license/blob/master/MIT.md</a>)</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

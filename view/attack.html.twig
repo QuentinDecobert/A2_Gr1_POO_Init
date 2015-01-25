@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }}- attack
+{% endblock %}
+{% block content %}
+    <h1>Welcome to Pokemon Battle OOP!</h1>
+
+    <h2>The battle Begin!</h2>
+    <h2>{{ pokeatk }} VS {{ pokedef }}</h2>
+    <h3>You have removed {{ attack }} HP to {{ pokedef }}</h3>
+
+{% endblock %}

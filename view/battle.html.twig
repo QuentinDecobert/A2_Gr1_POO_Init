@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }}- Battle
+{% endblock %}
+{% block content %}
+    <h1>Welcome  to Pokemon Battle OOP!</h1>
+    <h2>Welcome {{ username }}  </h2>
+
+        {% if user.username == session.username %}
+
+        {% else %}
+         <div id="startbat">
+            <p>{{ user.username }}{{ user.pokemonname }} <a href="attack.php?id={{ user.id }}">Start the Battle!</a></p>
+         </div>
+        {% endif %}
+
+
+{% endblock %}

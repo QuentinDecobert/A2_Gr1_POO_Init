@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }} - Create your Pokemon
+{% endblock %}
+{% block content %}
+    <h1>Create your Pokemon!</h1>
+    <form method="post" action="">
+        <label for="name">Name:</label>
+        <p><input type="text" id="name" name="name" required autofocus/></p>
+        <label for="status">Status</label>
+        <select name="type" id="type">
+            <option value="{{ type }}">Fire</option>
+            <option value="1">Water</option>
+            <option value="2">Plant</option>
+        </select>
+        <input type="submit" value="Envoyer" />
+    </form>
+{% endblock %}

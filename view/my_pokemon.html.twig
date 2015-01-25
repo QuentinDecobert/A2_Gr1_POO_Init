@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ parent() }} - My Pokemon
+{% endblock %}
+{% block content %}
+    <h1>My Pokemon</h1>
+    <h2> Pokemon Name:{{ pokename }}</h2>
+    <h2> Pokemon Hp: {{ hp }} <a href="heal.php">Heal your Pokemon</a> </h2>
+    <h2> Pokemon type: {{ types }}</h2>
+    <h2><a href="delete.php"> Delete Pokemon</a></h2>
+{% endblock %}
